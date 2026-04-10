@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { CounterProvider } from "./context/HitungContext";
+import HitungDisplay from "./components/HitungDisplay";
+import HitungButton from "./components/HitungButton";
+import ResetButton from "./components/ResetButton";
+import HistoryList from "./components/HistoryList";
+
+console.log("Display:", HitungDisplay);
+console.log("Button:", HitungButton);
+console.log("Reset:", ResetButton);
+console.log("History:", HistoryList);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CounterProvider>
+      <h1>Tugas Pertemuan 4</h1>
+      <HitungDisplay />
+      <HitungButton />
+      <ResetButton />
+      <HistoryList />
+    </CounterProvider>
   );
 }
 
